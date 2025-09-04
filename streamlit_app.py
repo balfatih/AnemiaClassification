@@ -50,3 +50,8 @@ with col3:
     PCT = st.number_input("PCT", value=0.0)
 
 
+if st.button("Tahmin Et"):
+    X = np.array([[WBC, LYMp, NEUTp, LYMn, NEUTn, RBC, HGB, HCT, MCV, MCH, MCHC, PLT, PDW, PCT]])
+    prediction = model.predict(X)
+    st.write("📌 Tahmin Sonucu:", prediction)
+
