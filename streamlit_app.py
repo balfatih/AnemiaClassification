@@ -18,3 +18,10 @@ st.markdown(
 def load_model():
     return tf.keras.models.load_model("model.h5")
 
+model = load_model()
+
+
+# Kullanıcılardan giriş alınıyor.
+wbc = st.number_input("WBC", value=0.0)
+LYMp = st.number_input("LYMp", value=0.0)
+NEUTp = st.number_input("NEUTp", value=0.0)
