@@ -5,4 +5,4 @@ import seaborn as sns
 
 st.title('YSA Modeli ile Anemi Türlerinin Sınıflandırılması')
 
-st.info("Bu uygulama Fatih Bal tarafından 'Optimize Edilmiş Yapay Sinir Ağı Modeli ile Anemi Türlerinin Sınıflandırılması' çalışması için geliştirilmiştir. ")
+st.info("Bu uygulama Fatih Bal tarafından <i>Optimize Edilmiş Yapay Sinir Ağı Modeli ile Anemi Türlerinin Sınıflandırılması</i> çalışması için geliştirilmiştir. ")
