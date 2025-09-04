@@ -23,7 +23,7 @@ def load_model():
 model = load_model()
 
 # Sınıf etiketleri (0,1,2,3 → sınıf isimleri)
-class_labels = ["Healthy", "NHA", "NNA", "IDA"]
+class_labels = ["Sağlıklı", "NHA", "NNA", "IDA"]
 
 # 3 sütun oluşturuluyor.
 col1, col2, col3 = st.columns(3)
