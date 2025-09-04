@@ -49,6 +49,8 @@ with col3:
     PDW = st.number_input("PDW", value=0.0)
     PCT = st.number_input("PCT", value=0.0)
 
+st.write("Model input shape:", model.input_shape)
+
 
 if st.button("Tahmin Et"):
     X = np.array([[WBC, LYMp, NEUTp, LYMn, NEUTn, RBC, HGB, HCT, MCV, MCH, MCHC, PLT, PDW, PCT]])
