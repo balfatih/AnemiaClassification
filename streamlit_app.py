@@ -65,7 +65,7 @@ if st.button("Tahmin Et"):
         #st.write("📌 Tahmin Sonucu:", prediction)
 
         # Eğer tek boyutlu çıktı (sayı) ise:
-        pred_class_index = int(pred_probs[0].argmax())  # veya int(pred_probs[0]) kullanabilirsin
+        pred_class_index = int(prediction[0].argmax())  # veya int(prediction[0]) kullanabilirsin
         pred_class_label = class_labels[pred_class_index]
         
         st.success(f"📌 Tahmin Sonucu: {pred_class_label}")
