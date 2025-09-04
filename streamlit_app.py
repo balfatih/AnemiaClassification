@@ -22,6 +22,9 @@ def load_model():
 
 model = load_model()
 
+# Sınıf etiketleri (0,1,2,3 → sınıf isimleri)
+class_labels = ["Healthy", "NHA", "NNA", "IDA"]
+
 # 3 sütun oluşturuluyor.
 col1, col2, col3 = st.columns(3)
 
@@ -59,6 +62,7 @@ if st.button("Tahmin Et"):
         st.write("Girdi şekli:", X.shape)
         st.write("Model input shape:", model.input_shape)
         prediction = model.predict(X)
-        st.write("📌 Tahmin Sonucu:", prediction)
+        #st.write("📌 Tahmin Sonucu:", prediction)
+        st.success(f"📌 Tahmin Sonucu: {pred_class_label}")
     except Exception as e:
         st.error(f"Hata oluştu: {e}")
