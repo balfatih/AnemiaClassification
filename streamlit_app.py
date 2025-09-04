@@ -5,5 +5,12 @@ import seaborn as sns
 
 st.title('YSA Modeli ile Anemi Türlerinin Sınıflandırılması')
 
-st.info('Bu uygulama Fatih Bal tarafından <i><a href="https://linkadresin.com" target="_blank">Optimize Edilmiş Yapay Sinir Ağı Modeli</a></i> çalışması için geliştirilmiştir.', unsafe_allow_html=True)
+st.markdown(
+    """
+    ℹ️ Bu uygulama Fatih Bal tarafından *[Optimize Edilmiş Yapay Sinir Ağı Modeli](https://linkadresin.com)* 
+    çalışması için geliştirilmiştir.
+    """,
+    unsafe_allow_html=True
+)
+
 
