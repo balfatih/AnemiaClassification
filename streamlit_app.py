@@ -13,4 +13,8 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+# Modeli yükle
+@st.cache_resource
+def load_model():
+    return tf.keras.models.load_model("model.h5")
 
