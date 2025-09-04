@@ -63,6 +63,11 @@ if st.button("Tahmin Et"):
         st.write("Model input shape:", model.input_shape)
         prediction = model.predict(X)
         #st.write("📌 Tahmin Sonucu:", prediction)
+
+        # Eğer tek boyutlu çıktı (sayı) ise:
+        pred_class_index = int(pred_probs[0].argmax())  # veya int(pred_probs[0]) kullanabilirsin
+        pred_class_label = class_labels[pred_class_index]
+        
         st.success(f"📌 Tahmin Sonucu: {pred_class_label}")
     except Exception as e:
         st.error(f"Hata oluştu: {e}")
