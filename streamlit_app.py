@@ -26,7 +26,9 @@ col1, col2, col3 = st.columns(3)
 
 # Kullanıcılardan giriş alınıyor.
 
-# 1. sütun
+# 3 sütun oluştur
+col1, col2, col3 = st.columns(3)
+
 with col1:
     WBC = st.number_input("WBC", value=0.0)
     LYMp = st.number_input("LYMp", value=0.0)
@@ -34,7 +36,6 @@ with col1:
     LYMn = st.number_input("LYMn", value=0.0)
     NEUTn = st.number_input("NEUTn", value=0.0)
 
-# 2. sütun
 with col2:
     RBC = st.number_input("RBC", value=0.0)
     HGB = st.number_input("HGB", value=0.0)
@@ -42,21 +43,21 @@ with col2:
     MCV = st.number_input("MCV", value=0.0)
     MCH = st.number_input("MCH", value=0.0)
 
-# 3. sütun
 with col3:
     MCHC = st.number_input("MCHC", value=0.0)
     PLT = st.number_input("PLT", value=0.0)
     PDW = st.number_input("PDW", value=0.0)
     PCT = st.number_input("PCT", value=0.0)
 
-st.write("Model input shape:", model.input_shape)
-
-
+# Kullanıcı tahmin butonuna bastığında çalışacak
 if st.button("Tahmin Et"):
-    X = np.array([[float(WBC), float(LYMp), float(NEUTp), float(LYMn), float(NEUTn),
-               float(RBC), float(HGB), float(HCT), float(MCV), float(MCH),
-               float(MCHC), float(PLT), float(PDW), float(PCT)
-                  ]])
-    prediction = model.predict(X)
-    st.write("📌 Tahmin Sonucu:", prediction)
-
+    try:
+        X = np.array([[float(WBC), float(LYMp), float(NEUTp), float(LYMn), float(NEUTn),
+                       float(RBC), float(HGB), float(HCT), float(MCV), float(MCH),
+                       float(MCHC), float(PLT), float(PDW), float(PCT)]], dtype=np.float32)
+        st.write("Girdi şekli:", X.shape)
+        st.write("Model input shape:", model.input_shape)
+        prediction = model.predict(X)
+        st.write("📌 Tahmin Sonucu:", prediction)
+    except Exception as e:
+        st.error(f"Hata oluştu: {e}")
