@@ -6,3 +6,4 @@ Scikit-Learn
 Seaborn
 Tensorflow
 joblib
+StandardScaler
