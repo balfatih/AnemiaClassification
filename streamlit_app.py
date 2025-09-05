@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import tensorflow as tf
 import numpy as np
+import joblib
 
 st.title('YSA Modeli ile Anemi Türlerinin Sınıflandırılması')
 
