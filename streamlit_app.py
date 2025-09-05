@@ -55,6 +55,9 @@ with col3:
     PDW = st.number_input("PDW", value=0.0)
     PCT = st.number_input("PCT", value=0.0)
 
+# Standart Scaler dosyası yükleniyor.
+scaler = joblib.load("scaler.pkl")
+
 # Kullanıcı tahmin butonuna bastığında çalışacak
 if st.button("Tahmin Et"):
     try:
@@ -64,7 +67,6 @@ if st.button("Tahmin Et"):
         st.write("Girdi şekli:", X.shape)
         st.write("Model input shape:", model.input_shape)
 
-        scaler = StandardScaler()
         X_scaled = scaler.transform(X)
         
         prediction = model.predict(X_scaled)
