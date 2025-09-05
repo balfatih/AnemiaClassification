@@ -61,7 +61,10 @@ if st.button("Tahmin Et"):
                        float(MCHC), float(PLT), float(PDW), float(PCT)]], dtype=np.float32)
         st.write("Girdi şekli:", X.shape)
         st.write("Model input shape:", model.input_shape)
-        prediction = model.predict(X)
+
+        X_scaled = scaler.transform(X)
+        
+        prediction = model.predict(X_scaled)
         #st.write("📌 Tahmin Sonucu:", prediction)
 
         # Eğer tek boyutlu çıktı (sayı) ise:
