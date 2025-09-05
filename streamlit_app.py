@@ -5,6 +5,7 @@ import seaborn as sns
 import tensorflow as tf
 import numpy as np
 import joblib
+from sklearn.preprocessing import StandardScaler
 
 st.title('YSA Modeli ile Anemi Türlerinin Sınıflandırılması')
 
