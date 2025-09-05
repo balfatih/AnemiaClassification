@@ -64,6 +64,7 @@ if st.button("Tahmin Et"):
         st.write("Girdi şekli:", X.shape)
         st.write("Model input shape:", model.input_shape)
 
+        scaler = StandardScaler()
         X_scaled = scaler.transform(X)
         
         prediction = model.predict(X_scaled)
