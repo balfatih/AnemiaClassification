@@ -5,3 +5,4 @@ Matplotlib
 Scikit-Learn
 Seaborn
 Tensorflow
+joblib
